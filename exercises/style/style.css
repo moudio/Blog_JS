@@ -18,6 +18,7 @@ header {
   background-image: url('../assets/banner.jpeg');
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .profile-image {
@@ -39,11 +40,23 @@ header {
 }
 
 .main {
-  background-color: yellow;
-  height: 100px;
   margin-top: 32px;
   display: flex;
   justify-content: center;
+}
+
+header > * {
+  z-index: 10;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .main-container {
   max-width: 750px;
@@ -52,7 +65,74 @@ header {
   padding-left: 16px;
   padding-right: 16px;
 }
+.post {
+  display: flex;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 8px;
+  min-height: 200px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+.post:hover {
+  transform: translate3d(0, -5px, 0);
+  box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+.post-image {
+  background-image: url('../assets/post_one.jpg');
+  flex-basis: 40%;
+  background-size: cover;
+  background-position: center;
+}
 
+.post-content {
+  display: flex;
+  flex-basis: 60%;
+  flex-direction: column;
+  padding: 23px;
+}
+.post-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #adb5bd;
+}
+.post-title {
+  font-size: 1.5em;
+  margin-top: 16px;
+}
+.post-title h4 {
+  margin: 0;
+}
+.post-text {
+  margin-top: 4px;
+  color: #495057;
+  font-weight: 400;
+  line-height: 1.4;
+  max-height: 65px;
+  overflow: hidden;
+}
+
+.nav-button.new-post-button {
+  position: fixed;
+  bottom: 3px;
+  right: 30px;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background-color: #004186;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.25s ease;
+}
+
+.nav-button.new-post-button:hover {
+  background-color: #002349;
+}
 footer {
   min-height: 100px;
   background-color: #eaecee70;
