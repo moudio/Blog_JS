@@ -80,7 +80,6 @@ header::after {
   transition: all 0.25s ease;
 }
 .post-image {
-  background-image: url('../assets/post_one.jpg');
   flex-basis: 40%;
   background-size: cover;
   background-position: center;
